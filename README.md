@@ -9,6 +9,8 @@ The lab environment includes a Wazuh Manager hosted on Ubuntu, a Wazuh Agent ins
 
 ---
 
+![(/assets/)](https://github.com/kpuentec/SIEMLab/blob/main/assets/Flowchart.png)
+
 ## 2. Lab Architecture
 * Wazuh Manager	- Ubuntu Server VM:	Collects, analyzes, and stores logs from connected agents
 * Wazuh Agent	- Windows Host:	Sends system logs and monitored events to the manager
@@ -93,13 +95,15 @@ Save and restart the agent service.
 
 Verify that the agent is registered in the Wazuh Dashboard under "Agents".
 
-![(/assets/Screenshot 2025-07-24 120745.png)](https://github.com/kpuentec/SIEMLab/blob/main/assets/Screenshot%202025-07-24%20120745.png)
+![(/assets/)](https://github.com/kpuentec/SIEMLab/blob/main/assets/Screenshot%202025-07-24%20120745.png)
 
 ---
 
 ## 7. File Integrity Monitoring (Windows Agent)
    
 Wazuh monitors file changes using the Syscheck module.
+
+![(/assets/)](https://github.com/kpuentec/SIEMLab/blob/main/assets/Screenshot%202025-07-24%20121616.png)
 
 Edit the agent’s configuration file:
 
@@ -108,11 +112,18 @@ Edit the agent’s configuration file:
 Add the following within the <directories> block:
 
     <directories realtime="yes">C:\Users\abc\Test</directories>
+
 * Change abc to your system username, and create a Test Directory
+
+![(/assets/)](https://github.com/kpuentec/SIEMLab/blob/main/assets/Screenshot%202025-07-24%20123217.png)
 
 Restart the Wazuh Agent service via the GUI or Services panel.
 
 Wazuh will now monitor the specified directory in real time. File creation, modification, or deletion will trigger alerts in the dashboard.
+
+![(/assets/)](https://github.com/kpuentec/SIEMLab/blob/main/assets/Screenshot%202025-07-24%20124432.png)
+
+![(/assets/)](https://github.com/kpuentec/SIEMLab/blob/main/assets/Screenshot%202025-07-24%20124508.png)
 
 ---
 
@@ -120,10 +131,14 @@ Wazuh will now monitor the specified directory in real time. File creation, modi
 
 A brute-force SSH attack was performed using Hydra:
 
+![(/assets/)](https://github.com/kpuentec/SIEMLab/blob/main/assets/Screenshot%202025-07-24%20131135.png)
+
 hydra -l admin -P /usr/share/wordlists/rockyou.txt ssh://192.168.x.x
 Failed login attempts were detected by Wazuh, and alerts were generated for:
 
+Logon Failure
 
+![(/assets/](https://github.com/kpuentec/SIEMLab/blob/main/assets/Screenshot%202025-07-24%20131040.png)
 
 ---
 
@@ -150,6 +165,8 @@ AWS Secret Access Key
 Default region
 
 Output format (json)
+
+![(/assets/)](https://github.com/kpuentec/SIEMLab/blob/main/assets/Screenshot%202025-07-24%20152220.png)
 
 Checked if the integration script existed:
 
