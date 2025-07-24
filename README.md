@@ -93,7 +93,7 @@ Save and restart the agent service.
 
 Verify that the agent is registered in the Wazuh Dashboard under "Agents".
 
-![Wazuh Screenshot](/assets/Screenshot 2025-07-24 120745.png)
+![(/assets/Screenshot 2025-07-24 120745.png)](https://github.com/kpuentec/SIEMLab/blob/main/assets/Screenshot%202025-07-24%20120745.png)
 
 ---
 
