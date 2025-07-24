@@ -93,6 +93,8 @@ Save and restart the agent service.
 
 Verify that the agent is registered in the Wazuh Dashboard under "Agents".
 
+![Wazuh Screenshot](/assets/Screenshot 2025-07-24 120745.png)
+
 ---
 
 ## 7. File Integrity Monitoring (Windows Agent)
